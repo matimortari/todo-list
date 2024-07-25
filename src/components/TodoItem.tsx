@@ -1,3 +1,5 @@
+"use client"
+
 import { Todo } from "@prisma/client"
 
 interface TodoItemProps {
@@ -6,42 +8,37 @@ interface TodoItemProps {
 	deleteTodo: (id: string) => Promise<void>
 }
 
-export async function updateTodo(id: string, complete: boolean) {
-	const res = await fetch(`/api/todos/${id}`, {
-		method: "PUT",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({ complete }),
-	})
-	if (!res.ok) {
-		throw new Error("Failed to update todo")
-	}
-}
-
-export async function deleteTodo(id: string) {
-	const res = await fetch(`/api/todos/${id}`, {
-		method: "DELETE",
-	})
-	if (!res.ok) {
-		throw new Error("Failed to delete todo")
-	}
-}
-
 export default function TodoItem({ todo, updateTodo, deleteTodo }: TodoItemProps) {
+	if (!todo) {
+		return null
+	}
+
+	const truncateText = (text: string, maxLength: number) => {
+		if (text.length > maxLength) {
+			return text.substring(0, maxLength) + "..."
+		}
+		return text
+	}
+
 	return (
 		<li className="button flex max-w-4xl">
 			<div className="flex items-center gap-2">
 				<input
+					className="checkbox"
 					type="checkbox"
 					id={todo.id}
 					checked={todo.complete}
 					onChange={(e) => updateTodo(todo.id, e.target.checked)}
-					className="checkbox h-6 w-6"
 				/>
-				<label htmlFor={todo.id}>{todo.title}</label>
+				<label
+					className={`cursor-pointer font-medium ${todo.complete ? "text-muted-foreground line-through" : ""}`}
+					htmlFor={todo.id}
+				>
+					{truncateText(todo.title, 45)}
+				</label>
 			</div>
-			<button onClick={() => deleteTodo(todo.id)} className="button-delete ml-auto">
+
+			<button className="button-delete ml-auto" onClick={() => deleteTodo(todo.id)}>
 				X
 			</button>
 		</li>

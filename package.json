@@ -9,7 +9,6 @@
 		"start": "next start",
 		"test": "playwright test",
 		"format": "prettier --write . && next lint",
-		"db:generate": "dotenv -e .env.local -- prisma generate",
 		"db:push": "dotenv -e .env.local -- prisma db push",
 		"db:dev": "dotenv -e .env.local -- prisma migrate dev",
 		"db:deploy": "dotenv -e .env.production -- prisma migrate deploy",
