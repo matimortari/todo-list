@@ -18,9 +18,12 @@ export default function Home() {
 	})
 
 	return (
-		<div className="flex flex-col items-center p-4">
-			<header className="">
+		<div className="flex flex-col p-4">
+			<header className="mb-4 flex items-center justify-between">
 				<strong className="text-4xl">My To-Do List</strong>
+				<Link href="/new" className="button">
+					New To-Do
+				</Link>
 			</header>
 
 			<div className="">
@@ -29,10 +32,6 @@ export default function Home() {
 					<TodoItem />
 				</div>
 			</div>
-
-			<Link href="/new" className="button">
-				New To-Do
-			</Link>
 		</div>
 	)
 }
