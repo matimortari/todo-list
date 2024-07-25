@@ -16,7 +16,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 	return (
 		<html lang="en">
-			<body>
+			<body className="flex min-h-screen flex-col">
 				<Providers session={session}>
 					<TopNav />
 					<main>{children}</main>
