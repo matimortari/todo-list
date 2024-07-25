@@ -3,6 +3,7 @@ import TopNav from "@/src/components/TopNav"
 import { authOptions } from "@/src/lib/auth"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
+import Footer from "../components/Footer"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				<Providers session={session}>
 					<TopNav />
 					<main>{children}</main>
+					<Footer />
 				</Providers>
 			</body>
 		</html>

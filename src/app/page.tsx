@@ -1,6 +1,8 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query"
+import Link from "next/link"
+import TodoItem from "../components/TodoItem"
 
 const getMessage = async () => {
 	const response = await fetch("/api/hello")
@@ -17,10 +19,20 @@ export default function Home() {
 
 	return (
 		<div className="flex flex-col items-center p-4">
-			<button className="button" onClick={() => refetch()}>
-				Hello World!
-			</button>
-			{data?.message && <strong className="mt-4">{data.message}</strong>}
+			<header className="">
+				<strong className="text-4xl">My To-Do List</strong>
+			</header>
+
+			<div className="">
+				<p className="text-2xl font-light text-muted-foreground">Hello! Please sign in to view and manage your taks.</p>
+				<div className="">
+					<TodoItem />
+				</div>
+			</div>
+
+			<Link href="/new" className="button">
+				New To-Do
+			</Link>
 		</div>
 	)
 }
