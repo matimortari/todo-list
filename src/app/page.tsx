@@ -2,7 +2,6 @@
 
 import { useSession } from "next-auth/react"
 import Link from "next/link"
-import TodoItem from "../components/TodoItem"
 
 export default function Home() {
 	const { data: session } = useSession()
@@ -19,9 +18,7 @@ export default function Home() {
 			{!session?.user ? (
 				<p className="text-2xl font-light text-muted-foreground">Hello! Please sign in to view and manage your taks.</p>
 			) : (
-				<ul className="mt-4">
-					<TodoItem />
-				</ul>
+				<ul className="mt-4">Placeholder for todos</ul>
 			)}
 		</div>
 	)
