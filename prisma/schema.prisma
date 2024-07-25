@@ -44,6 +44,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  Todo          Todo[]
 
   @@map("users")
 }
@@ -55,4 +56,12 @@ model VerificationToken {
 
   @@unique([identifier, token])
   @@map("verificationtokens")
+}
+
+model Todo {
+  id       String  @id @default(uuid())
+  userId   String
+  title    String
+  complete Boolean @default(false)
+  user     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

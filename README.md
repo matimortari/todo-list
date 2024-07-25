@@ -2,7 +2,7 @@
 
 Next.js website for managing to-dos, with CRUD and NextAuth support.
 
-[🚀 Check it out!](https://example.com)
+[🚀 Check it out!](https://wdc-todo.vercel.app/)
 
 ## 🖧 Stack
 

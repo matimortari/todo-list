@@ -26,12 +26,11 @@ export default function Home() {
 				</Link>
 			</header>
 
-			<div className="">
-				<p className="text-2xl font-light text-muted-foreground">Hello! Please sign in to view and manage your taks.</p>
-				<div className="">
-					<TodoItem />
-				</div>
-			</div>
+			<p className="text-2xl font-light text-muted-foreground">Hello! Please sign in to view and manage your taks.</p>
+
+			<ul className="mt-4">
+				<TodoItem />
+			</ul>
 		</div>
 	)
 }
