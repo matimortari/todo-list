@@ -69,3 +69,45 @@
 	box-shadow: 1px 0px 4px 0px var(--muted);
 	border-radius: 9999px;
 }
+
+.checkbox {
+	border: 2px solid var(--accent);
+	position: relative;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 100%;
+	width: 1.25rem;
+	height: 1.25rem;
+	transition: box-shadow 0.3s;
+}
+
+.checkbox:hover {
+	box-shadow: 0 0 2px 2px var(--accent);
+}
+
+.checkbox:checked::after {
+	background-color: var(--accent);
+	content: "";
+	display: block;
+	position: absolute;
+	border-radius: 100%;
+	top: 50%;
+	left: 50%;
+	width: 0.75rem;
+	height: 0.75rem;
+	transform: translate(-50%, -50%);
+}
+
+.button-delete {
+	background-color: var(--destructive);
+	color: var(--destructive-foreground);
+	border-radius: 9999px;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	transition: box-shadow 0.3s;
+}
+
+.button-delete:hover {
+	box-shadow: 0 0 2px 2px var(--destructive);
+}
