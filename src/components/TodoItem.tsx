@@ -6,6 +6,28 @@ interface TodoItemProps {
 	deleteTodo: (id: string) => Promise<void>
 }
 
+export async function updateTodo(id: string, complete: boolean) {
+	const res = await fetch(`/api/todos/${id}`, {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ complete }),
+	})
+	if (!res.ok) {
+		throw new Error("Failed to update todo")
+	}
+}
+
+export async function deleteTodo(id: string) {
+	const res = await fetch(`/api/todos/${id}`, {
+		method: "DELETE",
+	})
+	if (!res.ok) {
+		throw new Error("Failed to delete todo")
+	}
+}
+
 export default function TodoItem({ todo, updateTodo, deleteTodo }: TodoItemProps) {
 	return (
 		<li className="button flex max-w-4xl">
@@ -19,7 +41,6 @@ export default function TodoItem({ todo, updateTodo, deleteTodo }: TodoItemProps
 				/>
 				<label htmlFor={todo.id}>{todo.title}</label>
 			</div>
-
 			<button onClick={() => deleteTodo(todo.id)} className="button-delete ml-auto">
 				X
 			</button>

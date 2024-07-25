@@ -1,14 +1,18 @@
+import fs from "fs"
 import { NextResponse } from "next/server"
+import path from "path"
 
-export const GET = async () => {
+export async function GET() {
+	const jsonDirectory = path.join(process.cwd(), "tests")
+	const filePath = path.join(jsonDirectory, "mock.json")
+
 	try {
-		const data = {
-			message: "Hello from the test route!",
-		}
+		const fileContents = fs.readFileSync(filePath, "utf8")
+		const data = JSON.parse(fileContents)
 
 		return NextResponse.json(data)
 	} catch (error) {
-		console.error("Error occurred:", error)
-		return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
+		console.error("Error reading JSON file:", error)
+		return NextResponse.error()
 	}
 }
