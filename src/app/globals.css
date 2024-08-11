@@ -56,18 +56,26 @@
 
 .button {
 	box-shadow: 1px 0px 4px 0px var(--muted);
-	border-radius: 0.25rem;
+	border-radius: 1rem;
 	padding: 0.5rem;
 	font-weight: 700;
 }
 
 .button:hover {
-	opacity: 0.7;
+	opacity: 0.5;
 }
 
 .avatar {
 	box-shadow: 1px 0px 4px 0px var(--muted);
-	border-radius: 9999px;
+	border-radius: 100%;
+}
+
+.icon {
+	transition: transform 0.3s ease-in-out;
+}
+
+.icon:hover {
+	transform: scale(1.2);
 }
 
 .checkbox {

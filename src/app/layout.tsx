@@ -8,7 +8,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
 	title: "My To-Do List",
-	description: "Next.js to-do list website",
+	description: "To-do list website",
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
