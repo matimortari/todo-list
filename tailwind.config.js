@@ -2,13 +2,6 @@ const config = {
 	plugins: [require("tailwindcss-animate")],
 	content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
 	theme: {
-		container: {
-			center: true,
-			padding: "2rem",
-			screens: {
-				"2xl": "1400px",
-			},
-		},
 		extend: {
 			colors: {
 				background: "var(--background)",
