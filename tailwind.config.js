@@ -1,5 +1,4 @@
 const config = {
-	plugins: [require("tailwindcss-animate")],
 	content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
 	theme: {
 		extend: {
