@@ -22,4 +22,3 @@ tmp/
 *.swp
 *.ini
 .env*
-next-env.d.ts
