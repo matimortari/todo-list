@@ -1,16 +1,16 @@
 # To-Do List 📝
 
-Next.js website for managing to-dos, with CRUD and NextAuth support.
+Simple to-do list website with authentication, built with Next.js, TypeScript, and Tailwind CSS.
 
 [🚀 Check it out!](https://wdc-todo.vercel.app/)
 
 ## 🖧 Stack
 
-- Next.js for routing & server-side rendering
-- NextAuth for authentication with Google & GitHub
-- Prisma ORM for handling database operations
-- TypeScript
-- Tailwind CSS
+- Next.js for routing & server-side rendering.
+- NextAuth for authentication with Google & GitHub.
+- Prisma ORM for database management.
+- TypeScript.
+- Tailwind CSS.
 
 ## 📬 Contact
 
