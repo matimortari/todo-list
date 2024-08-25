@@ -3,6 +3,7 @@ import TopNav from "@/src/components/TopNav"
 import { authOptions } from "@/src/lib/auth"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
+import { Inter } from "next/font/google"
 import Footer from "../components/Footer"
 import "./globals.css"
 
@@ -11,12 +12,17 @@ export const metadata: Metadata = {
 	description: "To-do list website",
 }
 
+const inter = Inter({
+	subsets: ["latin"],
+	display: "swap",
+})
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const session = await getServerSession(authOptions)
 
 	return (
-		<html lang="en">
-			<body className="flex min-h-screen flex-col">
+		<html lang="en" className={inter.className}>
+			<body>
 				<Providers session={session}>
 					<TopNav />
 					<main>{children}</main>

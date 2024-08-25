@@ -11,23 +11,24 @@ export default function Login() {
 	}
 
 	return (
-		<div className="flex flex-col items-center p-4">
-			<div className="w-full max-w-md rounded p-4 shadow-md">
-				<div className="flex flex-col items-center justify-center px-8 text-center">
-					<strong className="p-2 text-5xl">Sign In</strong>
-					<p className="mt-4 text-lg text-muted-foreground">Sign in with your preferred provider</p>
-					<hr className="my-4 w-full border-muted" />
-				</div>
+		<>
+			<div className="flex h-screen flex-col items-center p-4">
+				<div className="flex flex-col items-center justify-center rounded-lg px-8 py-4 text-center shadow-md">
+					<strong className="p-4 text-5xl">Sign In</strong>
+					<p className="mt-2 text-base text-muted-foreground">Sign in with your preferred provider.</p>
 
-				<div className="flex flex-col items-center justify-center gap-4 p-6">
-					<button className="button w-full bg-github text-accent-foreground" onClick={() => signIn("github")}>
-						Sign In With GitHub
-					</button>
-					<button className="button w-full bg-google text-accent-foreground" onClick={() => signIn("google")}>
-						Sign In With Google
-					</button>
+					<hr className="my-6 w-full border-muted" />
+
+					<div className="m-4 flex flex-col items-center justify-center gap-4">
+						<button className="button w-full bg-github text-accent-foreground" onClick={() => signIn("github")}>
+							Sign In With GitHub
+						</button>
+						<button className="button w-full bg-google text-accent-foreground" onClick={() => signIn("google")}>
+							Sign In With Google
+						</button>
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	)
 }

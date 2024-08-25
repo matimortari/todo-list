@@ -56,8 +56,9 @@
 
 .button {
 	box-shadow: 1px 0px 4px 0px var(--muted);
-	border-radius: 1rem;
 	padding: 0.5rem;
+	border-radius: 0.5rem;
+	text-align: center;
 	font-weight: 700;
 }
 
@@ -118,4 +119,11 @@
 
 .button-delete:hover {
 	box-shadow: 0 0 2px 2px var(--destructive);
+}
+
+.input-field {
+	box-shadow: 1px 0px 4px 0px var(--muted);
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	font-weight: 700;
 }
