@@ -21,10 +21,10 @@ export default function Footer() {
 		<footer className="m-4 flex flex-col items-center justify-between md:flex-row">
 			<div className="flex flex-col items-center gap-2 text-muted-foreground md:flex-row">
 				<div className="flex flex-row gap-2">
-					<Link href="https://github.com/w11dcard" target="_blank" rel="noopener noreferrer">
+					<Link href="https://github.com/matimortari" target="_blank" rel="noopener noreferrer">
 						<Icon icon="simple-icons:github" className="icon h-6 w-6" />
 					</Link>
-					<Link href="https://www.linkedin.com/in/matheus-mortari-19rt/" target="_blank" rel="noopener noreferrer">
+					<Link href="https://www.linkedin.com/in/matheus-mortari-19rt" target="_blank" rel="noopener noreferrer">
 						<Icon icon="simple-icons:linkedin" className="icon h-6 w-6" />
 					</Link>
 				</div>
