@@ -1,6 +1,7 @@
 import Providers from "@/src/components/Providers"
 import TopNav from "@/src/components/TopNav"
 import { authOptions } from "@/src/lib/auth"
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
 import { Inter } from "next/font/google"
@@ -24,6 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		<html lang="en" className={inter.className}>
 			<body>
 				<Providers session={session}>
+					<Analytics />
 					<TopNav />
 					<main>{children}</main>
 					<Footer />
