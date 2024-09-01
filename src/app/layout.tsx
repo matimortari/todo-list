@@ -1,33 +1,28 @@
-import Providers from "@/src/components/Providers"
-import TopNav from "@/src/components/TopNav"
-import { authOptions } from "@/src/lib/auth"
-import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 import { getServerSession } from "next-auth"
 import { Inter } from "next/font/google"
+import Providers from "../components/context/Providers"
 import Footer from "../components/Footer"
-import "./globals.css"
+import Navbar from "../components/Navbar"
+import { authOptions } from "../lib/auth"
+import "../styles/globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: "My To-Do List",
-	description: "To-do list website",
+	description: "A simple to-do list website to manage your tasks.",
 }
-
-const inter = Inter({
-	subsets: ["latin"],
-	display: "swap",
-})
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const session = await getServerSession(authOptions)
 
 	return (
-		<html lang="en" className={inter.className}>
-			<body>
+		<html lang="en">
+			<body className={inter.className}>
 				<Providers session={session}>
-					<Analytics />
-					<TopNav />
-					<main>{children}</main>
+					<Navbar />
+					{children}
 					<Footer />
 				</Providers>
 			</body>

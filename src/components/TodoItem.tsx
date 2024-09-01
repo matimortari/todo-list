@@ -1,5 +1,3 @@
-"use client"
-
 import { Todo } from "@prisma/client"
 
 interface TodoItemProps {
