@@ -42,32 +42,30 @@ export default function Home() {
 	}, [session, status])
 
 	return (
-		<>
-			<div className="h-screen p-4">
-				<header className="mb-6 flex items-center justify-between">
-					<strong className="text-2xl md:text-4xl">My To-Do List</strong>
-					<Link className="button md:ml-4" href="/new">
-						New To-Do
-					</Link>
-				</header>
+		<div className="h-screen p-4">
+			<header className="mb-6 flex items-center justify-between">
+				<strong className="text-2xl md:text-4xl">My To-Do List</strong>
+				<Link className="button md:ml-4" href="/new">
+					New To-Do
+				</Link>
+			</header>
 
-				{!session?.user ? (
-					<p className="text-2xl font-light text-muted-foreground">
-						Welcome! Please sign in to see and manage your tasks.
-					</p>
-				) : (
-					<ul className="space-y-4">
-						{todos.map((todo) => (
-							<TodoItem
-								key={todo.id}
-								todo={todo}
-								updateTodo={(id, complete) => handleUpdateTodo(id, complete)}
-								deleteTodo={(id) => handleDeleteTodo(id)}
-							/>
-						))}
-					</ul>
-				)}
-			</div>
-		</>
+			{!session?.user ? (
+				<p className="text-2xl font-light text-muted-foreground">
+					Welcome! Please sign in to see and manage your tasks.
+				</p>
+			) : (
+				<ul className="space-y-4">
+					{todos.map((todo) => (
+						<TodoItem
+							key={todo.id}
+							todo={todo}
+							updateTodo={(id, complete) => handleUpdateTodo(id, complete)}
+							deleteTodo={(id) => handleDeleteTodo(id)}
+						/>
+					))}
+				</ul>
+			)}
+		</div>
 	)
 }

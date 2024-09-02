@@ -20,36 +20,34 @@ export default function New() {
 	}
 
 	return (
-		<>
-			<div className="h-screen p-4">
-				<header className="mb-6 flex flex-col">
-					<strong className="text-2xl md:text-4xl">Create New To-Do</strong>
-					<p className="m-2 font-light text-muted-foreground md:text-lg">Max. 45 characters.</p>
-				</header>
+		<div className="h-screen p-4">
+			<header className="mb-6 flex flex-col">
+				<strong className="text-2xl md:text-4xl">Create New To-Do</strong>
+				<p className="m-2 font-light text-muted-foreground md:text-lg">Max. 45 characters.</p>
+			</header>
 
-				{!session?.user ? (
-					<p className="text-2xl font-light text-muted-foreground">Please sign in to create a new task.</p>
-				) : (
-					<form className="flex flex-col gap-2" onSubmit={handleSubmit} method="post">
-						<input
-							className="input-field justify-start border border-muted bg-card shadow-md md:max-w-4xl"
-							type="text"
-							name="title"
-							maxLength={45}
-							required
-						/>
+			{!session?.user ? (
+				<p className="text-2xl font-light text-muted-foreground">Please sign in to create a new task.</p>
+			) : (
+				<form className="flex flex-col gap-2" onSubmit={handleSubmit} method="post">
+					<input
+						className="input-field justify-start border border-muted bg-card shadow-md md:max-w-4xl"
+						type="text"
+						name="title"
+						maxLength={45}
+						required
+					/>
 
-						<div className="flex gap-2 py-4">
-							<Link className="button" href="..">
-								Cancel
-							</Link>
-							<button className="button" type="submit" disabled={!session?.user}>
-								Create
-							</button>
-						</div>
-					</form>
-				)}
-			</div>
-		</>
+					<div className="flex gap-2 py-4">
+						<Link className="button" href="..">
+							Cancel
+						</Link>
+						<button className="button" type="submit" disabled={!session?.user}>
+							Create
+						</button>
+					</div>
+				</form>
+			)}
+		</div>
 	)
 }
