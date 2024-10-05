@@ -2,7 +2,13 @@
 
 Simple to-do list website with authentication, built with Next.js, TypeScript, and Tailwind CSS.
 
-[🚀 Check it out!](https://wdc-todo.vercel.app)
+[🔍 Check it out!](https://wdc-todo.vercel.app)
+
+## 📦 Key Features
+
+- **Authentication:** Sign in with Google or GitHub.
+- **To-Do List:** Add, edit, and delete tasks.
+- **Theme Switch:** Toggle between light and dark theme.
 
 ## 🖧 Stack
 
