@@ -1,11 +1,11 @@
 "use client"
 
+import TodoItem from "@/src/components/TodoItem"
+import { deleteTodo, readTodos, updateTodo } from "@/src/lib/actions"
 import { Todo } from "@prisma/client"
 import { useSession } from "next-auth/react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import TodoItem from "../components/TodoItem"
-import { deleteTodo, readTodos, updateTodo } from "../lib/actions"
 
 export default function Home() {
 	const [todos, setTodos] = useState<Todo[]>([])
